@@ -27,7 +27,7 @@ namespace SqliteFromScratch.Controllers {
             conn.Open();
 
             // sql is the string that will be run as an sql command
-            string sql = $"select * from tracks limit 200;";
+            string sql = $"select * from customerss limit 20;";
             // command combines the connection and the command string and creates the query
             using(SqliteCommand command = new SqliteCommand(sql, conn)) {
 
@@ -38,20 +38,23 @@ namespace SqliteFromScratch.Controllers {
                   while (reader.Read()) {
 
                       // map the data to the model.
-                      //Model newModel = new Model() {
-                      //TrackId = reader.GetInt32(0),
-                      //Name = reader.GetString(1),
-                      //AlbumId = reader.GetInt32(2),
-                      //MediaTypeId = reader.GetInt32(3),
-                      //GenreId = reader.GetInt32(4),
-                      //Composer = reader.GetValue(5).ToString(),
-                      //Milliseconds = reader.GetInt32(6),
-                      //Bytes = reader.GetInt32(7),
-                      //UnitPrice = reader.GetInt32(8)
+                      Customer newC = new Customer() {
+                      CustomerId = reader.GetInt32(0),
+                      FirstName = reader.GetString(1),
+                      LastName = reader.GetString(2),
+                      Company = reader.GetString(3),
+                      Address = reader.GetString(4),
+                      City = reader.GetString(5),
+                      State = reader.GetString(6),
+                      Country = reader.GetString(7),
+                      PostalCode = reader.GetString(8),
+                      Phone = reader.GetString(9),
+                      Fax = reader.GetString(10),
+                      Email = reader.GetString(11),
+                      SupportRepId = reader.GetInt32(12)
                   };
-
                     // add each one to the list.
-                    //customers.Add(newTrack);
+                    customers.Add(newC);
               }
             }
             conn.Close();

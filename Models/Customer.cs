@@ -16,6 +16,7 @@ namespace Models
         public string? PostalCode { get; set; }
         public string? Phone { get; set; }
         public string? Fax { get; set; }
+        public int? SupportRepId { get; set; }
         #nullable disable
     }
 }
