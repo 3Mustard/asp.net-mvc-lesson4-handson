@@ -13,7 +13,7 @@ namespace SqliteFromScratch.Controllers {
 
         // api/database
         [HttpGet]
-        public List<Customer> GetData() {
+        public List<Customer> GetTwentyCustomers() {
           // tracks will be populated with the result of the query.
           List<Customer> customers = new List<Customer>();
 
@@ -39,26 +39,30 @@ namespace SqliteFromScratch.Controllers {
 
                       // map the data to the model.
                       Customer newC = new Customer() {
-                      CustomerId = reader.GetInt32(0),
-                      FirstName = reader.GetString(1),
-                      LastName = reader.GetString(2),
-                      Company = reader.GetString(3),
-                      Address = reader.GetString(4),
-                      City = reader.GetString(5),
-                      State = reader.GetString(6),
-                      Country = reader.GetString(7),
-                      PostalCode = reader.GetString(8),
-                      Phone = reader.GetString(9),
-                      Fax = reader.GetString(10),
-                      Email = reader.GetString(11),
-                      SupportRepId = reader.GetInt32(12)
-                  };
-                    // add each one to the list.
-                    customers.Add(newC);
+                        CustomerId = reader.GetInt32(0),
+                        FirstName = reader.GetString(1),
+                        LastName = reader.GetString(2),
+                        Company = reader.GetString(3),
+                        Address = reader.GetString(4),
+                        City = reader.GetString(5),
+                        State = reader.GetString(6),
+                        Country = reader.GetString(7),
+                        PostalCode = reader.GetString(8),
+                        Phone = reader.GetString(9),
+                        Fax = reader.GetString(10),
+                        Email = reader.GetString(11),
+                        SupportRepId = reader.GetInt32(12)
+                      };
+
+                      // add each one to the list.
+                      customers.Add(newC);
+                  }
               }
             }
+
             conn.Close();
           }
+
           return customers;
         }
     }
