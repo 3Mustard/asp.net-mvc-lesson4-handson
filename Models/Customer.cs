@@ -1,6 +1,6 @@
 namespace Models
 {
-    public class Customers
+    public class Customer
     {
         public int CustomerId { get; set; }
         public string FirstName { get; set; }

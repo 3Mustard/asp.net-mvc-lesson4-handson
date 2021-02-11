@@ -13,9 +13,9 @@ namespace SqliteFromScratch.Controllers {
 
         // api/database
         [HttpGet]
-        public List<Track> GetData() {
+        public List<Customer> GetData() {
           // tracks will be populated with the result of the query.
-          List<Track> tracks = new List<Track>();
+          List<Customer> customers = new List<Customer>();
 
           // GetFullPath will return a string to complete the absolute path.
           string dataSource = "Data Source=" + Path.GetFullPath("chinook.db");
@@ -39,26 +39,24 @@ namespace SqliteFromScratch.Controllers {
 
                       // map the data to the model.
                       //Model newModel = new Model() {
-                        //TrackId = reader.GetInt32(0),
-                        //Name = reader.GetString(1),
-                        //AlbumId = reader.GetInt32(2),
-                        //MediaTypeId = reader.GetInt32(3),
-                        //GenreId = reader.GetInt32(4),
-                        //Composer = reader.GetValue(5).ToString(),
-                        //Milliseconds = reader.GetInt32(6),
-                        //Bytes = reader.GetInt32(7),
-                        //UnitPrice = reader.GetInt32(8)
-                    };
+                      //TrackId = reader.GetInt32(0),
+                      //Name = reader.GetString(1),
+                      //AlbumId = reader.GetInt32(2),
+                      //MediaTypeId = reader.GetInt32(3),
+                      //GenreId = reader.GetInt32(4),
+                      //Composer = reader.GetValue(5).ToString(),
+                      //Milliseconds = reader.GetInt32(6),
+                      //Bytes = reader.GetInt32(7),
+                      //UnitPrice = reader.GetInt32(8)
+                  };
 
-                      // add each one to the list.
-                      tracks.Add(newTrack);
-                 }
+                    // add each one to the list.
+                    //customers.Add(newTrack);
               }
             }
-          conn.Close();
+            conn.Close();
           }
-          
-          return tracks;
+          return customers;
         }
     }
 }
