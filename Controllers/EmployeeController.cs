@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
 using Models;
 
-namespace SqliteFromScratch.Controllers 
+namespace aspMvcLesson4Handson.Controllers 
 {
   [Route("api/[Controller]")]
   public class EmployeeController : Controller 

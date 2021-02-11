@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
 using Models;
 
-namespace SqliteFromScratch.Controllers {
+namespace aspMvcLesson4Handson.Controllers {
     // MVC is handling the routing for you.
     [Route("api/[Controller]")]
     public class CustomerController : Controller {
@@ -24,8 +24,7 @@ namespace SqliteFromScratch.Controllers {
           // conn initializes the connection to the .db file.
           using(SqliteConnection conn = new SqliteConnection(dataSource)) {
 
-            conn.Open();
-
+            conn.Open(); 
             // sql is the string that will be run as an sql command
             string sql = $"select * from customerss limit 20;";
             // command combines the connection and the command string and creates the query
