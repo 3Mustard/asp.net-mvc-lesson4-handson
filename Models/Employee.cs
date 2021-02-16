@@ -10,8 +10,8 @@ namespace Models
     public string? Email { get; set; }
     public string? Title { get; set; }
     public int? ReportsTo { get; set; }
-    public int? BirthDate { get; set; }
-    public int? HireDate { get; set; }
+    public string? BirthDate { get; set; }
+    public string? HireDate { get; set; }
     public string? Address { get; set; }
     public string? City { get; set; }
     public string? State { get; set; }
