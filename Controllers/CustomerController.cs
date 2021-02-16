@@ -66,3 +66,16 @@ namespace aspMvcLesson4Handson.Controllers {
         }
     }
 }
+
+// TRY TO IMPLEMENT FOR DRY procedures
+
+// SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MySQLConnString"].ConnectionString);
+// SqlCommand comm = new SqlCommand("NameOfStoredProcedure", conn);
+// comm.CommandType = CommandType.StoredProcedure;
+
+// conn.Open();
+// SqlCommandBuilder.DeriveParameters(comm);
+// conn.Close();
+
+// foreach (SqlParameter param in comm.Parameters)
+// { /* do stuff */ }
